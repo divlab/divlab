@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="base">qeqweqeqeqw</p>
-    <iframe src="../new.html" frameborder="0" id="myiframe"></iframe>
+    <p id="base">父页面元素</p>
+    <iframe src="new.html" frameborder="0" id="myiframe"></iframe>
 </body>
 <script>
     // document.getElementById("myiframe").contentWindow.document.querySelector('#btn').innerHTML='hhhahh'
     var btn= document.querySelector('#base').onclick=function(){
-        document.getElementById("myiframe").contentWindow.document.getElementById('btn').innerText='hahahahha'
+        document.getElementById("myiframe").contentWindow.document.getElementById('btn').innerText='更新按钮文字'
     }
   
 </script>
