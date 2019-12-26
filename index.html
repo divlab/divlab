@@ -8,14 +8,25 @@
 </head>
 <body>
     <p>测试分支提交</p>
-    <p id="base">父页面元素</p>
-    <iframe src="new.html" frameborder="0" id="myiframe"></iframe>
+    <p id="base">更改iframe</p>
+    <iframe src="https://w-hotels.marriott.com/" frameborder="0" id="myiframe"></iframe>
+<!--    <object data="new.html" type=""></object>-->
 </body>
 <script>
-    // document.getElementById("myiframe").contentWindow.document.querySelector('#btn').innerHTML='hhhahh'
+    // var link = document.createElement('link');
     var btn= document.querySelector('#base').onclick=function(){
-        document.getElementById("myiframe").contentWindow.document.getElementById('btn').innerText='更新按钮文字'
+        var iframe = document.createElement('iframe');
+        iframe.src='https://www.jd.com/';
+
+        document.getElementById('base').appendChild(iframe)
+        document.addEventListener('readystatechange',function () {
+            debugger
+            console.log(document.readyState)
+        })
+        // document.getElementById("myiframe").contentWindow.document.getElementById('btn').innerText='点击跳转baidu'
     }
-  
+    document.getElementById("myiframe").addEventListener('readystatechange',function () {
+      console.log(123123)
+    })
 </script>
 </html>
