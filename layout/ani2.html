@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div {
+        background: blue;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .img1 {
+        width: 50px;
+        text-align: center;
+        animation: tel-rotate 1s linear infinite alternate;
+        -webkit-animation: tel-rotate 1s linear infinite alternate;
+    }
+
+    .img2 {
+        margin-left: 40px;
+        animation: tel-rotate 1s linear infinite;
+        -webkit-animation: tel-rotate 1s linear infinite;
+    }
+
+    @keyframes tel-rotate {
+        from {
+            -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+        }
+        to {
+            -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+        }
+    }
+
+    @-webkit-keyframes tel-rotate {
+        from {
+            -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+        }
+        to {
+            -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../img/t_tel3.png" class="img1" />
+        <img src="../img/t_tel3.png" class="img1 img2" />
+    </div>
+</body>
+
+</html>

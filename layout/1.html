@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    * {
+        /*margin: 0;padding: 0;*/
+    }
+
+    div.justify {
+        text-align: justify;
+        width: 200px;
+        font-size: 15px;
+        height: 18px;
+        border: 1px solid red;
+    }
+
+    div.justify>span {
+        display: inline-block;
+        padding-left: 100%;
+    }
+
+
+    /*让一个元素垂直水平居中的3种方法*/
+    /*第一种方法:*/
+
+    div.box {
+        weight: 200px;
+        height: 400px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -200px;
+
+    }
+
+    /**兼容性好;缺点:必须知道元素的宽高*/
+
+    /*-------------*/
+
+    /*第二种方法：*/
+
+    div.box {
+        weight: 200px;
+        height: 400px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    /**这是css3里的样式;缺点:兼容性不好，只支持IE9+的浏览器*/
+
+    /*---------------*/
+
+    /*第三种方法*/
+    /*--start 水平垂直居中*/
+    .container {
+        margin-top: 20px;
+        border: 1px solid #f00;
+        width: 300px;
+        height: 300px;
+        position: relative;
+    }
+
+    .box {
+        border: 1px solid #000;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+    }
+
+    /*--end 水平垂直居中*/
+    /**兼容性较好，缺点:不支持IE7以下的浏览器*/
+    </style>
+</head>
+
+<body>
+    <div class="justify">
+        中文两端对齐 <span></span>
+    </div>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+<script>
+//继承方法应该类似以下函数:
+function inhent(Child, Parent) {
+    function F() {}; //定义一个临时函数
+
+    F.prototype = Parent.protoype; //把父类的原型赋给临时函数的原型
+    Child.prototype = new F() // : 11把子类的原型赋值为f的实例
+
+}
+</script>
+
+</html>

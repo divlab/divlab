@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+   
+        .overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.8);
+}
+.box-login{
+    display: none;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #fff;
+    z-index: 10;
+}
+    </style>
+
+    <script src="waterflow/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <a class="js-open-box" href="#">显示弹窗</a>
+
+<div class="box-login">
+    这里是弹窗内容
+</div>
+
+<div class="overlay"></div>
+<script>
+    $('.js-open-box').on('click',function(){
+    $('.overlay,.box-login').fadeIn(200);
+});
+
+$('.overlay').on('click',function(){
+    $('.overlay,.box-login').fadeOut(200,function(){
+        $(this).removeAttr('style');
+    });
+});
+</script>
+</body>
+</html>

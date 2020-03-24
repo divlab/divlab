@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+       /* div {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            margin: 100px;
+        }*/
+        *{
+            margin: 0;padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div style="border: 1px solid #f00;overflow: hidden;">
+        <div style="width: 100px;height: 100px;background: #eee;float: left;"></div>
+    </div>
+    <div style="height: 100px;width: 100px;float: left;background: lightblue;">我是一个左浮动的元素</div>
+    <div style="width: 200px; height: 200px;background: #eee;overflow: hidden;">
+        <p>我是一个没有设置浮动,也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;</p>
+    </div>
+</body>
+
+</html>

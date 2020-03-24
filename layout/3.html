@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{padding:0;margin: 0;}
+        #wrap {
+    *zoom: 1; position: relative;overflow: hidden;
+  }
+  #sidebar {
+    width: 300px; position: absolute; right: 0; top: 0;background: #ff0; margin-bottom: -9999px;padding-bottom: 9999px;
+  }
+  #content {
+    margin-right: 300px;background: #0f0;
+  }  
+  #footer {background-color: #f00;color:#fff;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+  <div id="sidebar" >固定宽度区</div>
+  <div id="content" >自适应区，在前面
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+  </div>
+</div>
+<div id="footer">后面的一个DIV，以确保前面的定位不会导致后面的变形</div>
+</body>
+</html>

@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <p>测试分支提交</p>
-    <p>
-        
-        可以测试下git branch -a 的效果。
-
-    测试方式：
-
-    把仓库clone两份在本地
-    其中一个新建分支并推送到远程，比如 feature01
-    另一个在未fetch时，git branch -a 记录显示结果
-    git fetch之后，再执行 git branch -a，记录显示结果
-    比较两次的执行结果
-    最后的结果，会发现第二次多了分支 remotes/origin/feature01，这个就是远程副本。如果是执行git pull，你会发现多了两个分支，分别是 feature01和 remotes/origin/feature01
-    </p>
+    <p>测试</p>
+    <p>测试</p>
+    <p>测试</p>
+    <p>测试</p>
+    <p>测试</p>
     <p id="base">更改iframe</p>
-    <iframe src="https://w-hotels.marriott.com/" frameborder="0" id="myiframe"></iframe>
-<!--    <object data="new.html" type=""></object>-->
+    <iframe src="case/new.html" frameborder="0" id="myiframe"></iframe>
+    <!--    <object data="new.html" type=""></object>-->
 </body>
 <script>
-    // var link = document.createElement('link');
-    var btn= document.querySelector('#base').onclick=function(){
-        var iframe = document.createElement('iframe');
-        iframe.src='https://www.jd.com/';
+// var link = document.createElement('link');
+var btn = document.querySelector('#base').onclick = function() {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'case/new.html';
 
-        document.getElementById('base').appendChild(iframe)
-        document.addEventListener('readystatechange',function () {
-            debugger
-            console.log(document.readyState)
-        })
-        // document.getElementById("myiframe").contentWindow.document.getElementById('btn').innerText='点击跳转baidu'
-    }
-    document.getElementById("myiframe").addEventListener('readystatechange',function () {
-      console.log(123123)
+    document.getElementById('base').appendChild(iframe)
+    document.addEventListener('readystatechange', function() {
+        debugger
+        console.log(document.readyState)
     })
+    // document.getElementById("myiframe").contentWindow.document.getElementById('btn').innerText='点击跳转baidu'
+}
+document.getElementById("myiframe").addEventListener('readystatechange', function() {
+    console.log(123123)
+})
 </script>
+
 </html>
