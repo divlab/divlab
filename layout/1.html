@@ -93,15 +93,5 @@
         <div class="box"></div>
     </div>
 </body>
-<script>
-//继承方法应该类似以下函数:
-function inhent(Child, Parent) {
-    function F() {}; //定义一个临时函数
-
-    F.prototype = Parent.protoype; //把父类的原型赋给临时函数的原型
-    Child.prototype = new F() // : 11把子类的原型赋值为f的实例
-
-}
-</script>
 
 </html>

@@ -10,6 +10,5 @@
 node_modules/
 package-lock.json
 
-case/t.html
 html
 layout/html

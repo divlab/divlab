@@ -15,14 +15,14 @@
     <p>测试</p>
     <p>测试</p>
     <p id="base">更改iframe</p>
-    <iframe src="case/new.html" frameborder="0" id="myiframe"></iframe>
+    <iframe src="lab/new.html" frameborder="0" id="myiframe"></iframe>
     <!--    <object data="new.html" type=""></object>-->
 </body>
 <script>
 // var link = document.createElement('link');
 var btn = document.querySelector('#base').onclick = function() {
     var iframe = document.createElement('iframe');
-    iframe.src = 'case/new.html';
+    iframe.src = 'lab/new.html';
 
     document.getElementById('base').appendChild(iframe)
     document.addEventListener('readystatechange', function() {
