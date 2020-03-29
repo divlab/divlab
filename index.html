@@ -10,7 +10,7 @@
 
 <body>
     <p>在计算机科学中，闭包（也称词法闭包或者函数闭包）是指一个函数或者函数的引用，与一个引用环境绑定在一起。
-    这个引用环境是一个存储每个非局部变量（也叫自由变量）的表</p>
+        这个引用环境是一个存储每个非局部变量（也叫自由变量）的表</p>
     <p>闭包不同于一般的函数，它允许一个函数在立即词法作用域外调用时，仍可以访问非本地变量。 -- from维基百科</p>
     <p>测试</p>
     <p>测试</p>
@@ -18,6 +18,14 @@
     <p id="base">更改iframe</p>
     <iframe src="lab/new.html" frameborder="0" id="myiframe"></iframe>
     <!--    <object data="new.html" type=""></object>-->
+    <p>
+        串行执行：
+        我们可以编写一个流程控制函数，让他来控制异步任务，一个任务完成后，再执行另一个。这就叫串行执行
+    </p>
+    <script type="text/javascript">
+    var items = [1, 2, 3, 4, 5, 6];
+    var result = [];
+    </script>
 </body>
 <script>
 // var link = document.createElement('link');
@@ -35,6 +43,45 @@ var btn = document.querySelector('#base').onclick = function() {
 document.getElementById("myiframe").addEventListener('readystatechange', function() {
     console.log(123123)
 })
+</script>
+<script>
+//从一种构造函数继承另一种构造函数的模式
+function F() {};
+
+function S() { S.height.constructor.call(this) };
+S.height = new F();
+/*
+    上面的代码中，F和S都是构造函数，在S内部的this上调用F，就会形成继承的效果
+*/
+//由于constructor是一种原型对象和猴枣函数的关系，所以在修改原型对象的时候，一定要注意constructor的指向问题；
+//解决方法有2种，一种是将constructor指向原来的构造函数，要么只在原型对象上添加和删除方法，避免instanceof失真
+</script>
+<script>
+function A() {}
+A.prototype = {
+    aa: function() { console.log('aa') }
+};
+
+function bridge() {}
+bridge.prototype = A.prototype;
+
+function B() {}
+B.prototype = new bridge();
+
+var a = new A();
+var b = new B();
+console.log(a.prototype == b.prototype) //bug??? 犀牛书？ false 成功分开原型 实际为true
+console.log(a.aa === b.aa) //true，子类共享父类的原型方法
+A.prototype.bb=function(){console.log('bb')} //为父类添加新的方法
+console.log(a.bb === b.bb) //true，孩子总会得到父亲的遗产
+
+B.prototype.cc=function(){console.log('cc')} //为父类添加新的方法
+console.log(a.cc === b.cc) //false，但父亲未必有机会可以看到孩子的新产业
+
+//并且可以通过js自带的instanceof验证
+console.log(b instanceof A) //true 
+console.log(b instanceof B) //true 
+
 </script>
 
 </html>

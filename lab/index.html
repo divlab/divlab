@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        div.a{
+            margin: 100px;
+            /*border: 1px solid #f00;*/
+            width: 100px;
+            height: 30px;
+            background: #000;
+            display: inline-block;
+
+        }
+        span{
+            margin:1px -1px;
+            display: inline-block;
+        }
+        #demo a,#demo span{     display:inline-block;     vertical-align:top; } #demo span{     margin:1px -1px; /* 关键规则 */ }
+        .justify{
+            text-align: justify;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #f00;
+        }
+        .justify span{
+            padding-left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <a href="#"><span>1px圆角</span></a>
+        <a href="#"><span>确定</span></a>
+        <a href="#"><span>取消</span></a>
+    </div>
+    <div class="a"><span></span></div>
+
+    <div class="justify">中文两端对齐<span></span></div>
+    <script>
+        var link = document.createElement('link');
+        link.rel="stylesheet";
+
+        link.href="http://sandbox.runjs.cn/uploads/rs/26/ddzmgynp/style.css";
+        // link.href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        document.getElementsByTagName('head')[0].appendChild(link);
+        link.onload = function(){
+            console.log(666666);
+        }
+
+        link.onerror = function(message,url,line){
+            console.log(message,url,line);
+            return true
+        }
+
+    </script>
+    <script>
+        function Super() {
+            this.name='father'
+        }
+        Super.prototype.sayName=function(){
+            console.log(this.name)
+        }
+        function Sub() {
+
+        }
+
+        Sub.prototype=new Super()
+        Sub.prototype.foo='hello'
+        Sub.prototype.constructor=Sub
+
+        var test=new Sub()
+
+
+        /*
+        * 继承方法应该类似下面这样
+        *
+        * */
+
+        function inherit(Child,Parent){
+            function F() {} //定义一个临时函数
+            F.prototype=Parent.prototype; //把父类原型赋值给临时函数的原型
+            Child.prototype=new F(); //把子类的原型赋为 F的实例
+        }
+
+    </script>
+    <script>
+        //一种去重方法
+        function getArray(a) {
+            var hash={},
+                len=a.length,
+                result=[];
+            for (let i = 0; i < len; i++) {
+                if(!hash[a[i]]){
+                    hash[a[i]]=true;
+                    result.push(a[i]);
+                }
+            }
+            return result
+        }
+    </script>
+</body>
+</html>
