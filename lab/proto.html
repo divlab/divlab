@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <style type="text/css">
+        .unistyle:after{content:"\2192"}
+    </style>
+</head>
+
+<body>
+<div class="unistyle">
+
+    dddddd
+
+
+</div>
+
+<script>
+    //构造函数1
+    function SuperType(){
+        this.value=111;
+    }
+    //构造函数2
+    function SubType(){
+        this.value = 222;
+    }
+
+    SuperType.prototype.getValue = function(){
+
+        return this.value;
+    };
+    //继承
+    SubType.prototype = new SuperType();
+
+    var instance = new SubType();
+    console.log(instance.getValue());
+
+</script>
+
+</body>
+</html>

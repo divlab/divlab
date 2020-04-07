@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script>
+    ;(function(window,undefined){
+      window.queue = [];
+      var windowOnload={
+        push:function(fn){
+          queue.push(fn);
+        },
+        call:function(){
+          for(var i=0;i<queue.length;i++){
+              queue[i]();
+          }
+        }
+      }
+      window.onload=function(){
+        window.windowOnload.call();
+      }
+      window.windowOnload = {
+        push:push
+      }
+    })(window);
+  </script>
+</head>
+<body>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script>
+    ;(function(window,undefined){
+      var windowOnload={
+        queue:[],
+        push:function(fn){
+          this.queue.push(fn);
+        },
+        call:function(){
+          for(var i=0;i<this.queue.length;i++){
+              this.queue[i]();
+          };
+        }
+      }
+      window.onload=function(){
+        windowOnload.call();
+      }
+      window.windowOnload = {
+        queue:windowOnload.queue,
+        push:windowOnload.push
+      }
+    })(window);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  console.log(window.windowOnload.queue);
+  console.log(window.windowOnload.push);
+  console.log(window.windowOnload.call);
+  
+</script>

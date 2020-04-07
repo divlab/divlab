@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    div{
+        height: 20px;
+        opacity: 0;
+        width:60px;
+        border:1px solid #D4D4D4;
+        left: 0;
+        display: inline-table;
+        padding: 5px 0px 5px 0px;
+        text-align: center;
+        margin-right:-1px;
+        margin-bottom: -1px;
+    }
+
+    @keyframes myfirst
+    {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+
+    @-moz-keyframes myfirst /* Firefox */
+    {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+
+    @-webkit-keyframes myfirst /* Safari 和 Chrome */
+    {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+
+    @-o-keyframes myfirst /* Opera */
+    {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+    </style>
+</head>
+
+<body>
+</body>
+
+<script>
+    var x=1,y=1,z=1;
+    clock();
+    function clock(){
+        if(z <=9){
+            if(x <= z){
+                var oFragment = document.createDocumentFragment();
+                while(y <= x){
+                    var thediv = document.createElement('div');
+                    thediv.innerHTML = y +'*'+ x + '=' + (x*y);
+                    thediv.style.animation = 'myfirst 0.1s linear '+ y/2 +'s forwards';
+                    oFragment.appendChild(thediv);
+                    y++;
+                }
+                oFragment.appendChild(document.createElement("br"));
+                document.body.appendChild(oFragment);
+                y = 1;
+                x++;
+            }else{
+                x = 1;
+            }
+            z++;
+        }
+        setTimeout('clock()',z*500);
+    }
+</script>
+</html>

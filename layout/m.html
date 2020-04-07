@@ -1,183 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-  *{
-    margin:0;
-    padding: 0;
-  }
-   .overlay{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.8);
-}
-.h{
-    overflow: hidden;
-}
-.box-login{
-    display: none;
-    margin: 10px auto;
-    /* margin: auto; */
-    /*position: absolute;*/
-     position: fixed; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 200px;
-    height: 1000px;
-    /* height: 1000px; */
-    background: #fff;
-    z-index: 10;
-}
-.js-open-box{
-    position: fixed;
-    right: 50px;
-    top: 100px;
-}
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-.modal-measure-scrollbar{
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    top: -300px;
-    left: -300px;
-    overflow: scroll;
-    z-index: 1000;
-    overflow-y: scroll;
-}
-.modal-measure-scrollbar .inner{
-    height: 200px;
-}
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .8);
+    }
 
+    .h {
+        overflow: hidden;
+    }
+
+    .box-login {
+        display: none;
+        margin: 10px auto;
+        /* margin: auto; */
+        /*position: absolute;*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+        background: #fff;
+        z-index: 10;
+    }
+
+    .js-open-box {
+        position: fixed;
+        right: 50px;
+        top: 100px;
+    }
+
+    .modal-measure-scrollbar {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        top: -300px;
+        left: -300px;
+        overflow: scroll;
+        z-index: 1000;
+        overflow-y: scroll;
+    }
+
+    .modal-measure-scrollbar .inner {
+        height: 200px;
+    }
     </style>
-    <script src="waterflow/js/jquery-1.8.3.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 </head>
+
 <body>
     <a class="js-open-box" href="#">显示弹窗</a>
-
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-<p>正文内容</p>
-
-<div class="box-login">
-    这里是弹窗内容
-    这里是弹窗内容
-    这里是弹窗内容
-    这里是弹窗内容
-    这里是弹窗内容
-    这里是弹窗内容
-</div>
-
-<div class="overlay"></div>
-<script>
-    $('.js-open-box').on('click',function(){
-    $('.overlay,.box-login').fadeIn(200);
-    $('html,body').addClass('h')
-    $('.js-open-box').addClass('compensate-for-scrollbar');
-});
-
-$('.overlay').on('click',function(){
-    $('.overlay,.box-login').fadeOut(200,function(){
-    $('html,body').removeClass('h');
-        $(this).removeAttr('style');
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <p>正文内容</p>
+    <div class="box-login">
+        这里是弹窗内容
+        这里是弹窗内容
+        这里是弹窗内容
+        这里是弹窗内容
+        这里是弹窗内容
+        这里是弹窗内容
+    </div>
+    <div class="overlay"></div>
+    <script>
+    $('.js-open-box').on('click', function() {
+        $('.overlay,.box-login').fadeIn(200);
+        $('html,body').addClass('h')
+        $('.js-open-box').addClass('compensate-for-scrollbar');
     });
-    $('.js-open-box').removeClass('compensate-for-scrollbar');
 
-});
+    $('.overlay').on('click', function() {
+        $('.overlay,.box-login').fadeOut(200, function() {
+            $('html,body').removeClass('h');
+            $(this).removeAttr('style');
+        });
+        $('.js-open-box').removeClass('compensate-for-scrollbar');
+
+    });
 
 
-   ;( function ScrollbarWidth() {
-        
-            if ($("#scrollbar-width").length > 0) return;
-            var a = $('<div class="modal-measure-scrollbar"/>').prependTo($("body")),
+    ;
+    (function ScrollbarWidth() {
+
+        if ($("#scrollbar-width").length > 0) return;
+        var a = $('<div class="modal-measure-scrollbar"/>').prependTo($("body")),
             b = $('<div class="inner"/>').appendTo(a),
             c = a.width() - b.width();
-            a.remove(),
+        a.remove(),
             $("head").append('<style id="scrollbar-width">.compensate-for-scrollbar {      margin-right: ' + c + "px      }      </style>")
-      
+
     })();
 
     //方法2
@@ -189,6 +191,7 @@ $('.overlay').on('click',function(){
     // w2 = $(window).width();
     //  $('html').removeClass('fancybox-lock-test');
     // $("<style type='text/css'>.fancybox-margin{margin-right:" + (w2 - w1) + "px;}</style>").appendTo("head");
-</script>
+    </script>
 </body>
+
 </html>

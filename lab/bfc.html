@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+          background-color: red;
+          overflow: hidden; /* creates a block formatting context */
+        }
+         
+        p {
+          background-color: lightgreen;
+          margin: 10px 0;
+        }
+        .in{
+            margin-top: 50px;
+            height: 100px;
+            background: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <p>Sibling 1 <div class="in"></div></p>
+      <p>Sibling 2</p>
+      <p>Sibling 3</p>
+    </div>
+</body>
+</html>
