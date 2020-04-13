@@ -77,33 +77,6 @@
 
         var test=new Sub()
 
-
-        /*
-        * 继承方法应该类似下面这样
-        *
-        * */
-
-        function inherit(Child,Parent){
-            function F() {} //定义一个临时函数
-            F.prototype=Parent.prototype; //把父类原型赋值给临时函数的原型
-            Child.prototype=new F(); //把子类的原型赋为 F的实例
-        }
-
-    </script>
-    <script>
-        //一种去重方法
-        function getArray(a) {
-            var hash={},
-                len=a.length,
-                result=[];
-            for (let i = 0; i < len; i++) {
-                if(!hash[a[i]]){
-                    hash[a[i]]=true;
-                    result.push(a[i]);
-                }
-            }
-            return result
-        }
     </script>
 </body>
 </html>
